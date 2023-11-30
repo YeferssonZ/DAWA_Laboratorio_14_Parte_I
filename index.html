@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carga de Archivos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <h2>Carga de Archivos</h2>
+        <form class="upload-form" action="/upload" method="POST" enctype="multipart/form-data">
+            <label for="files" class="custom-label">Seleccionar Archivos</label>
+            <input type="file" name="files" id="files" multiple />
+            <button type="submit" class="custom-btn">Cargar</button>
+        </form>
+
+        <div id="file-info" class="file-info-container"></div>
+        <div id="error-message" class="error-message"></div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+
+</html>

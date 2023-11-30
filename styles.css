@@ -1,0 +1,185 @@
+/* Estilos generales para el contenedor principal */
+.app-container::before {
+    content: "";
+    background: url('https://images6.alphacoders.com/134/1341505.png') no-repeat center center fixed;
+    background-size: cover;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Estilos compartidos para texto con sombra */
+.app-container h2,
+.app-container label,
+.app-container input,
+.app-container button,
+.app-container .custom-btn,
+.app-container p {
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Estilos para el título en español */
+.app-container h2 {
+    text-align: center;
+    color: #ff3399;
+    margin-bottom: 20px;
+    font-size: 2.5em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Estilos compartidos para el formulario de carga */
+.app-container .upload-form {
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+/* Estilos compartidos para etiquetas de entrada */
+.app-container label {
+    display: block;
+    margin-top: 10px;
+    color: #ff3399;
+    font-weight: bold;
+}
+
+/* Estilos compartidos para campos de entrada de texto y de archivo */
+.app-container input[type="text"],
+.app-container input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ff3399;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    border-radius: 5px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+/* Estilos compartidos para botones de carga y volver */
+.app-container button,
+.app-container .custom-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-right: 10px; /* Nuevo margen derecho */
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+}
+
+/* Estilos para botones de carga y volver específicos */
+.app-container button,
+.app-container .custom-btn {
+    background: #ff3399;
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Estilos al pasar el mouse sobre los botones de carga y volver */
+.app-container button:hover,
+.app-container .custom-btn:hover {
+    transform: scale(1.03);
+}
+
+.app-container button:hover,
+.app-container .custom-btn:hover {
+    background: #ff4d99;
+}
+
+/* Estilos para el contenedor de detalles del archivo */
+.file-details {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-right: 10px; /* Espaciado entre imágenes */
+    padding: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    max-width: 200px; /* Ancho máximo de cada caja */
+    width: 100%;
+    text-align: left;
+    overflow: hidden;
+    display: inline-block; /* Mostrar en línea para estar una al lado de la otra */
+    transition: transform 0.3s;
+}
+
+/* Estilos para la imagen cargada dentro del contenedor de detalles */
+.file-details img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Ajuste al pasar el mouse sobre los detalles del archivo */
+.file-details:hover {
+    transform: scale(1.05);
+}
+
+/* Estilos para mensajes de error */
+#error-message {
+    display: none;
+    background-color: #ff4d4d;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    margin-top: 10px;
+    font-weight: bold;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+}
+
+/* Estilos para mensajes de información */
+.info-message {
+    display: none;
+    background-color: #4da6ff;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    margin-top: 10px;
+    font-weight: bold;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+}
+
+/* Estilos al pasar el mouse sobre los mensajes */
+#error-message:hover,
+.info-message:hover {
+    background-color: #ff6666;
+}
+
+/* Animación de entrada para los mensajes */
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+#error-message,
+.info-message {
+    animation: slideIn 0.3s ease-in-out;
+}
